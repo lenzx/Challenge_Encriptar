@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+body {
+    margin: 0;
+}
+.container-grid {
+    display: grid;
+    height: 100vh;
+}
+.container-flex {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    
+}
+.container-left {
+    border: 1px solid black;
+    width: 18%;
+    text-align: center;
+    padding: 2% 0;
+}
+.img {
+    height: 50px;
+}
+.alura {
+    height: 100%;
+}
+
+.container-mid {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid black;
+    width: 55%;
+    
+    
+}
+.container-text-area {
+    height: 75%;
+    margin-top: 100px;
+    
+}
+.text-area {
+    resize: none;
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 0;
+    outline: none;
+    
+}
+.button-area {
+    display: flex;
+    height: 25%;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+button {
+    text-align: center;
+    border: none;
+    margin: 0 2%;
+    background-color: blue;
+    border-radius: 20px;
+    width: 50%;
+    height: 60px;
+}
+.button-desencriptar {
+    background-color: white;
+    border: 1px solid blue;
+}
+    
+.container-right {
+    display: flex;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    width: 30%;
+    margin: 2% 0;
+    border-radius: 20px;
+    background-image: url(./img/puppet.png);
+    background-size: 90% 50% ;
+    background-repeat: no-repeat;
+    background-position: 50% 20%;
+    align-items: center;
+    justify-content: center;
+}
+.container-traduccion {
+    height: 90%;
+    width: 90%;
+    overflow: hidden;
+    resize: none;
+    border: none;
+    pointer-events: none;
+}
+
+
+</style>
+<body>
+    <div class="container-grid">
+        <div class="container-flex">
+            <div class="container-left">
+                <div class="img"><img class="alura" src="./img/alura_icon.png" alt=""></div>
+            </div>
+            <div class="container-mid">
+                <div class="container-text-area">
+                    <textarea class="text-area"></textarea>
+                </div>
+                <div class="button-area">
+                    <button class="button-encriptar">Encriptar</button>
+                    <button class="button-desencriptar">Desencriptar</button>
+                </div>
+            </div>
+            <div class="container-right">
+                <textarea  class="container-traduccion"></textarea>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./js/main.js"></script>
+</html>
