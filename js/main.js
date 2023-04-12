@@ -1,19 +1,26 @@
-const botonDesecriptar = document.querySelector('.button-encriptar');
-botonDesecriptar.addEventListener('click', inicio)
+const botonEncriptar = document.querySelector('.button-encriptar');
+botonEncriptar.addEventListener('click', encriptador)
 
-function obtener_textarea(){
-    return document.querySelector(".text-area")
-}
-function inicio(){
+const botonDesencriptar = document.querySelector('.button-desencriptar');
+botonDesencriptar.addEventListener('click', desencriptador)
+
+function encriptador(){
     let texto = document.querySelector(".text-area").value;
-    const resultado = encriptar(encriptador,texto)
-    let res = document.querySelector('.container-traduccion');
+    const resultado = fnEncriptar(encriptar,texto)
+    let res = document.querySelector('.container-right');
     res.innerHTML=`
-    ${resultado}
-    `
+    <textarea  class="container-traduccion">${resultado}</textarea>`
+}
+function desencriptador(){
+    let texto = document.querySelector(".text-area").value;
+    const resultado = fnEncriptar(desencriptar,texto)
+    let res = document.querySelector('.container-right');
+    res.innerHTML=`
+    <textarea  class="container-traduccion">${resultado}</textarea>`
+    console.log(document.querySelector('.container-traduccion').value)
 }
 
-const encriptador= {
+const encriptar= {
     e : 'enter',
     i : 'imes',
     a : 'ai',
@@ -29,17 +36,10 @@ const desencriptar = {
     ufat : 'u'
 }
 
-function encriptar (codigoEncriptador,palabra) {
+function fnEncriptar (codigoEncriptador,palabra) {
     for (let x in codigoEncriptador) {
         palabra = palabra.replace(new RegExp(x,'gi'),codigoEncriptador[x])
         }
     return palabra;
 } 
 
-function mostrarResultado (result) {
-
-}
-const pal = 'aeIou'
-const pa2 = 'aienterimesoberufat'
-console.log(encriptar(encriptador,pal))
-console.log(encriptar(desencriptar,pa2))
