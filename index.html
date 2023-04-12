@@ -80,6 +80,7 @@ button {
     
 .container-right {
     display: flex;
+    flex-direction: column;
     border: 1px solid rgba(0, 0, 0, 0.3);
     width: 30%;
     margin: 2% 0;
@@ -89,7 +90,7 @@ button {
     background-repeat: no-repeat;
     background-position: 50% 20%;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
 }
 .container-traduccion {
     height: 90%;
@@ -99,7 +100,18 @@ button {
     border: none;
     pointer-events: none;
 }
-
+.container-subtitle {
+    margin-bottom: 20%;
+    text-align: center;
+}
+.display {
+    display: none;
+}
+p {
+    position: relative;
+    bottom: 22%;
+    left: 10%;
+}
 
 </style>
 <body>
@@ -118,7 +130,11 @@ button {
                 </div>
             </div>
             <div class="container-right">
-
+                <div class="container-subtitle" >
+                    <div class="subtitle1">ningun mensaje fue encontrado</div>
+                    <div class="subtitle2">ingrese el texto que desea encriptar o desencriptar</div>
+                </div>
+                <textarea  class="container-traduccion display"></textarea>`
             </div>
         </div>
     </div>

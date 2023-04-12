@@ -4,20 +4,39 @@ botonEncriptar.addEventListener('click', encriptador)
 const botonDesencriptar = document.querySelector('.button-desencriptar');
 botonDesencriptar.addEventListener('click', desencriptador)
 
+
 function encriptador(){
     let texto = document.querySelector(".text-area").value;
     const resultado = fnEncriptar(encriptar,texto)
-    let res = document.querySelector('.container-right');
-    res.innerHTML=`
-    <textarea  class="container-traduccion">${resultado}</textarea>`
+    let res = document.querySelector('.container-traduccion');
+    let subtitle = document.querySelector('.container-subtitle')
+    if (texto != '') {
+        res.classList.remove('display')
+        subtitle.classList.add('display')
+        res.innerHTML=`${resultado}`
+
+    } else {
+        res.classList.add('display')
+        subtitle.classList.remove('display')
+    }
+
 }
+
 function desencriptador(){
     let texto = document.querySelector(".text-area").value;
     const resultado = fnEncriptar(desencriptar,texto)
-    let res = document.querySelector('.container-right');
-    res.innerHTML=`
-    <textarea  class="container-traduccion">${resultado}</textarea>`
-    console.log(document.querySelector('.container-traduccion').value)
+    let res = document.querySelector('.container-traduccion');
+    let subtitle = document.querySelector('.container-subtitle')
+    if (texto != '') {
+        res.classList.remove('display')
+        subtitle.classList.add('display')
+        res.innerHTML=`${resultado}`
+
+    } else {
+        res.classList.add('display')
+        subtitle.classList.remove('display')
+    }
+
 }
 
 const encriptar= {
