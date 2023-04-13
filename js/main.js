@@ -61,4 +61,3 @@ function fnEncriptar (codigoEncriptador,palabra) {
         }
     return palabra;
 } 
-
