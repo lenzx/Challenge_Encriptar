@@ -13,6 +13,7 @@ body {
 .container-grid {
     display: grid;
     height: 100vh;
+    min-height:565px;
 }
 .container-flex {
     display: flex;
@@ -21,7 +22,6 @@ body {
     
 }
 .container-left {
-    border: 1px solid black;
     width: 18%;
     text-align: center;
     padding: 2% 0;
@@ -37,14 +37,12 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
-    border: 1px solid black;
     width: 55%;
-    
-    
 }
 .container-text-area {
     height: 75%;
     margin-top: 100px;
+    margin-right: 20px;
     
 }
 .text-area {
@@ -54,11 +52,20 @@ body {
     border: none;
     padding: 0;
     outline: none;
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #0A3871;
+
+
     
 }
 .button-area {
     display: flex;
-    height: 25%;
+    height: 30%;
     align-self: center;
     align-items: center;
     justify-content: center;
@@ -68,20 +75,31 @@ button {
     text-align: center;
     border: none;
     margin: 0 2%;
-    background-color: blue;
+    background-color: #0A3871;
     border-radius: 20px;
     width: 50%;
     height: 60px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: white;
 }
 .button-desencriptar {
-    background-color: white;
-    border: 1px solid blue;
+    background-color: #D8DFE8;
+    color: #0A3871;
+    
+}
+.button-copiar {
+    width: 80%;
+    
 }
     
 .container-right {
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
-    border: 1px solid rgba(0, 0, 0, 0.3);
     width: 30%;
     margin: 2% 0;
     border-radius: 20px;
@@ -92,26 +110,121 @@ button {
     align-items: center;
     justify-content: end;
 }
+.container-subtitle {
+    margin: 0 10%;
+    margin-bottom: 120px;
+    text-align: center;
+}
+.container-subtitle .subtitle1 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+}
+.container-subtitle .subtitle2 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+}
+.container-traduccion-text {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    ;
+}
 .container-traduccion {
-    height: 90%;
+    height: 76.3%;
     width: 90%;
+    margin: 10% 0;
     overflow: hidden;
     resize: none;
     border: none;
     pointer-events: none;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #495057;
+    align-items: center;
 }
-.container-subtitle {
-    margin-bottom: 20%;
-    text-align: center;
+.container-copiar {
+    height: 23.7%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .display {
     display: none;
 }
 p {
     position: relative;
-    bottom: 22%;
+    bottom: 22.5%;
     left: 10%;
 }
+@media (max-width: 800px){
+    body {
+        height: 100%;
+    }
+    .container-grid{
+        height: 100%;
+        width: 100%;
+    }
+    .container-flex{
+        flex-direction: column;
+        height: 100%;
+        min-height: 100vh;
+    }
+    .container-left{
+        display: grid;
+        height: 80px;
+        width: 100%;
+        align-items: center;
+        justify-content: start;
+        margin-left: 20px;
+    }
+    .container-mid {
+        width: 100%;
+        height: 700px;
+    }
+    .container-text-area {
+        margin: 0 5%;
+    }
+    .container-right{
+        display: flex;
+        background-image: none;
+        justify-content: center;
+        width: 100%;
+        padding: 10%;
+        
+    }
+    .container-subtitle {
+        margin: 0;
+        width: 100%;
+        margin-bottom: 10%;
+    }
+    
+    .container-traduccion {
+        margin: 0;
+        height: 100%;
+        padding: 0 10px;
+        display: block;
+        resize: both;
+        pointer-events: none;
+        width: 100%;
+        white-space: nowrap;
+        overflow: scroll;
+        
+    }
+
+}
+
 
 </style>
 <body>
@@ -124,7 +237,6 @@ p {
                 <div class="container-text-area">
                     <textarea class="text-area"></textarea>
                 </div>
-                
                 <div class="button-area">
                     <button class="button-encriptar">Encriptar</button>
                     <button class="button-desencriptar">Desencriptar</button>
@@ -135,7 +247,11 @@ p {
                     <div class="subtitle1">ningun mensaje fue encontrado</div>
                     <div class="subtitle2">ingrese el texto que desea encriptar o desencriptar</div>
                 </div>
-                <textarea  class="container-traduccion display"></textarea>`
+                <div class ="container-traduccion display">
+                <div class="container-copiar">
+                    <button class="button-copiar">Copiar</button>
+                </div>
+                </div>
             </div>
         </div>
     </div>
