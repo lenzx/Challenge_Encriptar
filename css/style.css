@@ -14,7 +14,7 @@ body {
     
 }
 .container-left {
-    width: 18%;
+    width: 13%;
     text-align: center;
     padding: 2% 0;
 }
@@ -90,9 +90,9 @@ button {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    width: 30%;
-    margin: 2% 2%;
-    padding: 0 20px;
+    width: 32%;
+    padding: 2% 0;
+    margin: 2% 0;
     border-radius: 20px;
     background-image: url(../img/puppet.png);
     background-size: 90% 50% ;
@@ -128,21 +128,20 @@ button {
     line-height: 150%;
 }
 .container-traduccion-text {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin: 0 10px;
-    justify-content: start;
+    width: 80%;
+    height: 100%;
+    resize:none;
     word-wrap: break-word;
     overflow: hidden;
+    
 }
 .container-copiar {
     width: 100%;
-    height: 175px;
+    height: 130px;
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     
 }
 .buton-copiar {

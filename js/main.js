@@ -9,12 +9,12 @@ botonCopiar.addEventListener('click',copiarTexto)
 
 
 function encriptador(){
-    let texto = document.querySelector(".text-area").value;
+    const texto = document.querySelector(".text-area").value;
     const resultado = fnEncriptar(encriptar,texto)
-    let boton = document.querySelector('.container-copiar')
-    let fondo = document.querySelector('.container-right')
-    let container = document.querySelector('.container-traduccion-text')
-    let subtitle = document.querySelector('.container-subtitle')
+    const boton = document.querySelector('.container-copiar')
+    const fondo = document.querySelector('.container-right')
+    const container = document.querySelector('#texto')
+    const subtitle = document.querySelector('.container-subtitle')
     if (texto != '') {
         container.classList.remove('display')
         fondo.classList.add('fondo')
@@ -39,21 +39,18 @@ function desencriptador(){
         container.classList.remove('display')
         subtitle.classList.add('display')
         container.innerHTML=`${resultado}`
-
     } else {
         container.classList.add('display')
         subtitle.classList.remove('display')
     }
-
 }
+
 async function copiarTexto () {
-    try {   
-        await navigator.clipboard.writeText(document.querySelector('#texto').value)
+    try {
+        await navigator.clipboard.writeText(`${document.querySelector('#texto').innerHTML}`)
     } catch (err) {
             console.error('Error al copiar al portapapeles:', err)
         }
-        console.log(document.querySelector('.container-traduccion-text').value)
-
 }
 const encriptar= {
     e : 'enter',
