@@ -4,22 +4,25 @@ botonEncriptar.addEventListener('click', encriptador)
 const botonDesencriptar = document.querySelector('.button-desencriptar');
 botonDesencriptar.addEventListener('click', desencriptador)
 
-const botonCopiar = document.querySelector('.button-copiar')
+const botonCopiar = document.querySelector('.buton-copiar')
 botonCopiar.addEventListener('click',copiarTexto)
 
 
 function encriptador(){
     let texto = document.querySelector(".text-area").value;
     const resultado = fnEncriptar(encriptar,texto)
-    let res = document.querySelector('.container-traduccion');
+    let boton = document.querySelector('.buton-copiar')
+    let container = document.querySelector('.container-traduccion-text')
     let subtitle = document.querySelector('.container-subtitle')
     if (texto != '') {
-        res.classList.remove('display')
+        container.classList.remove('display')
+        boton.classList.remove('display')
         subtitle.classList.add('display')
-        res.innerHTML=`${resultado}`
+        container.innerHTML=`${resultado}`
     } else {
-        res.classList.add('display')
+        container.classList.add('display')
         subtitle.classList.remove('display')
+        boton.classList.add('display')
     }
 
 }
@@ -43,7 +46,7 @@ function desencriptador(){
 }
 async function copiarTexto () {
     try {
-        await navigator.clipboard.writeText(document.querySelector('.container-traduccion').value)
+        await navigator.clipboard.writeText(document.querySelector('.container-traduccion-text').value)
     } catch (err) {
             console.error('Error al copiar al portapapeles:', err)
         }
