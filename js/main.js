@@ -11,11 +11,13 @@ botonCopiar.addEventListener('click',copiarTexto)
 function encriptador(){
     let texto = document.querySelector(".text-area").value;
     const resultado = fnEncriptar(encriptar,texto)
-    let boton = document.querySelector('.buton-copiar')
+    let boton = document.querySelector('.container-copiar')
+    let fondo = document.querySelector('.container-right')
     let container = document.querySelector('.container-traduccion-text')
     let subtitle = document.querySelector('.container-subtitle')
     if (texto != '') {
         container.classList.remove('display')
+        fondo.classList.add('fondo')
         boton.classList.remove('display')
         subtitle.classList.add('display')
         container.innerHTML=`${resultado}`
@@ -23,6 +25,7 @@ function encriptador(){
         container.classList.add('display')
         subtitle.classList.remove('display')
         boton.classList.add('display')
+        fondo.classList.remove('fondo')
     }
 
 }
@@ -31,12 +34,11 @@ function desencriptador(){
     let texto = document.querySelector(".text-area").value;
     const resultado = fnEncriptar(desencriptar,texto)
     let container = document.querySelector('.container-traduccion-text')
-    let res = document.querySelector('.container-traduccion');
     let subtitle = document.querySelector('.container-subtitle')
     if (texto != '') {
         container.classList.remove('display')
         subtitle.classList.add('display')
-        res.innerHTML=`${resultado}`
+        container.innerHTML=`${resultado}`
 
     } else {
         container.classList.add('display')
@@ -45,11 +47,12 @@ function desencriptador(){
 
 }
 async function copiarTexto () {
-    try {
-        await navigator.clipboard.writeText(document.querySelector('.container-traduccion-text').value)
+    try {   
+        await navigator.clipboard.writeText(document.querySelector('#texto').value)
     } catch (err) {
             console.error('Error al copiar al portapapeles:', err)
         }
+        console.log(document.querySelector('.container-traduccion-text').value)
 
 }
 const encriptar= {
