@@ -31,18 +31,25 @@ function encriptador(){
 }
 
 function desencriptador(){
-    let texto = document.querySelector(".text-area").value;
+    const texto = document.querySelector(".text-area").value;
     const resultado = fnEncriptar(desencriptar,texto)
-    let container = document.querySelector('.container-traduccion-text')
-    let subtitle = document.querySelector('.container-subtitle')
+    const boton = document.querySelector('.container-copiar')
+    const fondo = document.querySelector('.container-right')
+    const container = document.querySelector('#texto')
+    const subtitle = document.querySelector('.container-subtitle')
     if (texto != '') {
         container.classList.remove('display')
+        fondo.classList.add('fondo')
+        boton.classList.remove('display')
         subtitle.classList.add('display')
         container.innerHTML=`${resultado}`
     } else {
         container.classList.add('display')
         subtitle.classList.remove('display')
+        boton.classList.add('display')
+        fondo.classList.remove('fondo')
     }
+
 }
 
 async function copiarTexto () {
