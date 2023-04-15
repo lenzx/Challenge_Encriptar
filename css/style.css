@@ -28,7 +28,6 @@ body {
 .container-mid {
     display: flex;
     flex-direction: column;
-    text-align: center;
     width: 55%;
 }
 .container-text-area {
@@ -52,20 +51,13 @@ body {
     letter-spacing: 0em;
     text-align: left;
     color: #0A3871;
-
-
-    
 }
 .button-area {
     display: flex;
     height: 30%;
-    align-self: center;
     align-items: center;
-    justify-content: center;
-    width: 100%;
 }
 button {
-    text-align: center;
     border: none;
     margin: 0 2%;
     background-color: #0A3871;
@@ -78,17 +70,15 @@ button {
     font-size: 16px;
     line-height: 19px;
     color: white;
+    cursor: pointer;
 }
 .button-desencriptar {
     background-color: #D8DFE8;
     color: #0A3871;
-    
 }
-    
 .container-right {
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.2);
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
     width: 32%;
     padding: 2% 0;
@@ -104,7 +94,6 @@ button {
     font-weight: 400;
     line-height: 36px;
     letter-spacing: 0em;
-    text-align: left;
     color: #495057;
 }
 .container-subtitle {
@@ -132,8 +121,6 @@ button {
     height: 100%;
     resize:none;
     word-wrap: break-word;
-    overflow: hidden;
-    
 }
 .container-copiar {
     width: 100%;
@@ -141,8 +128,6 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    
 }
 .buton-copiar {
     width: 85%;
@@ -183,11 +168,8 @@ button {
         margin: 0 5%;
     }
     .container-right{
-        height:auto;
         width: auto;
-        background-image: none;
-        justify-content: center;
-        
+        background-image: none;    
     }
     .container-subtitle {
         margin: 0;
@@ -195,18 +177,25 @@ button {
         margin-bottom: 10%;
     }
     
-    .container-traduccion {
-        margin: 0;
-        height: 100%;
-        display: block;
-        resize: both;
-        pointer-events: none;
-        
-        
-    }
     .container-traduccion-text{
-        height: 100%;
         margin: 0 1%;
 
     }
+}
+@media(max-width : 450px ) {
+    .button-area{
+        flex-direction: column;
+    }
+    
+    .container-mid {
+        height: 70vh;
+    }
+    .button-area{
+        height: 200px;
+        margin-top: 10px;
+    }
+    .button-desencriptar,.button-encriptar{
+        margin: 12px 0;
+    }
+    
 }
